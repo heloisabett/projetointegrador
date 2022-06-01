@@ -1,14 +1,12 @@
 <template>
   <header>
-    Home
-    <span class="texto-header">Home</span>
-    <span class="separador">|</span>
-    <span class="texto-header">jogadores</span>
-    <span class="separador">jogadores</span>
-    <span class="texto-header">times</span>
+    <span>Home</span>
+    <span>|</span>
+    <span>jogadores</span>
+    <span>|</span>
+    <span>times</span>
   </header>
-  <main>Main</main>
-  <footer>Rodapé</footer>
+  <RouterView />
 </template>
 
 <style>
@@ -17,24 +15,25 @@
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   height: 100vh;
 
   font-weight: normal;
 }
 header,
 footer {
-  height: 15%;
-  background-color: black;
+  height: 10%;
+  background-color: rgb(128, 72, 173);
   color: white;
-  font-size: normal;
+  font-size: 1.3em;
   display: flex;
+  justify-content: sspace-between;
   align-items: center;
+  padding-left: 20px;
 }
 main {
-  height: 70%;
+  height: 85%;
 }
-header span{
+header span {
   padding: 0 20px;
 }
 </style>
