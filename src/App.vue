@@ -1,11 +1,13 @@
 <script setup>
-import HeaderComp from './components/template/HeaderComp.vue';
-import FooterComp from './components/template/FooterComp.vue';
+import HeaderComp from "./components/template/HeaderComp.vue";
+import FooterComp from "./components/template/FooterComp.vue";
 </script>
 
 <template>
   <HeaderComp />
-  <RouterView />
+  <main>
+    <RouterView />
+  </main>
   <FooterComp />
 </template>
 
@@ -15,7 +17,7 @@ import FooterComp from './components/template/FooterComp.vue';
 #app {
   max-width: 1280px;
   margin: 0 auto;
-  height: 100vh;
+  height: 95vh;
 
   font-weight: normal;
 }
@@ -24,9 +26,7 @@ a {
   text-decoration: none;
 }
 
-
 main {
   height: 85%;
 }
-
 </style>
