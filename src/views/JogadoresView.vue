@@ -1,13 +1,27 @@
 <script>
+import { v4 as uuidv4 } from "uuid";
 export default {
   data() {
     return {
       jogadores: [
-        { id: 1, nome: "jogador 1", timeid: 1 },
-        { id: 2, nome: "jogador 2", timeid: 2 },
-        { id: 3, nome: "jogador 3", timeid: 3 },
+        { id: "57499564-b809-4961-a5fc-fbc6a10dd02a", nome: "jogador 1", time:"time 1"},
+        { id: "6ce6ba08-fd36-4b70-a87b-430028408886", nome: "jogador 2" ,time:"time 2"},
+        { id: "e991b7e9-973f-4df4-916c-26bca5269094", nome: "jogador 3" ,time:"time 3"},
+        { id: "024c7219-28d1-4101-acb3-21ef2aecb587", nome: "jogador 4" ,time:"time 4"},
       ],
+    novo_jogador:"",
+    novo_time:"",
     };
+  },
+  methods: {
+    salvar() {
+      const novo_id = uuidv4 ();
+      this.jogadores.push({
+        id: novo_id,
+        nome: this.novo_jogador,
+        time: this.novo_time,
+      });
+    },
   },
 };
 </script>
@@ -17,9 +31,9 @@ export default {
       <h2>Gerenciamento de Jogadores</h2>
     </div>
     <div class="form_input">
-      <input type="text" />
-      <input type="text" />
-      <button>Salvar</button>
+      <input type="text" v-model="novo_jogador"/>
+      <input type="text" v-model="novo_time"/>
+      <button @click="salvar">Salvar</button>
     </div>
     <div class="list_times">
       <table>
@@ -36,7 +50,7 @@ export default {
             <td>{{ jogador.id }}</td>
             <td>{{ jogador.nome }}</td>
             <td>???</td>
-            <td>{{ jogador.timeid }}</td>
+            <td>{{ jogador.time }}</td>
           </tr>
         </tbody>
       </table>
